@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos</title>
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap">
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="../imagenes/Logo_CeramicArte.png" alt="ceramik-arte logo">
+                </a>
+
+                <!-- Botón de menú responsive en móviles -->
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú de navegación -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre_nosotros.html">Quiénes Somos</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="muestras.html">Muestras</a></li>
+                        <li class="nav-item"><a class="nav-link" href="workshop.html">Workshops</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección de Contacto -->
+    <main>
+        <section class="contact-section">
+            <h2>Contáctanos</h2>
+            <p>Si tienes preguntas sobre nuestros productos, quieres inscribirte en un workshop o simplemente deseas
+                saber más sobre nuestro proceso de trabajo, no dudes en contactarnos. Puedes llenar el siguiente
+                formulario y te responderemos a la brevedad.</p>
+
+            <div class="contact-container">
+                <!-- Imagen decorativa -->
+                <div class="contact-image">
+                    <img src="../imagenes/Contactanos.png" alt="Imagen de contacto">
+                </div>
+
+                <!-- Formulario de Contacto -->
+                <form class="contact-form">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Ingresa tu teléfono (opcional)">
+
+                    <label for="subject">Motivo</label>
+                    <select id="subject" name="subject">
+                        <option value="productos">Consulta sobre productos</option>
+                        <option value="workshops">Inscripción a workshops</option>
+                        <option value="cotizacion">Cotización</option>
+                        <option value="otro">Otro</option>
+                    </select>
+
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+
+                    <button type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+
+            <!-- Información adicional de contacto -->
+            <div class="contact-info">
+                <p>También puedes comunicarte con nosotros a través de:</p>
+                <p><strong>Email:</strong> contacto@ceramikarte.com</p>
+                <p><strong>Teléfono:</strong> +54 9 11 1234 5678</p>
+                <p><strong>Dirección:</strong> Calle Ficticia 123, Buenos Aires, Argentina</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Ceramik-Arte</p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="sobre_nosotros.html">Quiénes Somos</a></li>
+                <li><a href="muestras.html">Muestras</a></li>
+                <li><a href="workshop.html">Workshops</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <img src="../imagenes/icon_redes_facebook.png" alt="Facebook">
+            <img src="../imagenes/icon_redes-instagram.png" alt="Instagram">
+        </div>
+    </footer>
+    <!-- Enlace a Bootstrap JS (opcional, necesario para componentes interactivos) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
