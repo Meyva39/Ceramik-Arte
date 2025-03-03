@@ -1,1268 +1,1226 @@
+@charset "UTF-8";
+/* ------- Variables Globales ------- */
+/* ------- Mixins ------- */
+/* ------- Placeholders para `@extend` ------- */
+.flex-2 .muestras div {
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer ul a, .main-header .custom-navbar .navbar-nav .nav-link {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out;
+}
+.footer ul a:hover, .main-header .custom-navbar .navbar-nav .nav-link:hover {
+  color: #758c5e;
+}
+
+/* ------- Animación de Entrada (FadeIn) ------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* ------- Estilos Generales ------- */
 body {
-    font-family: 'Montserrat', Arial, sans-serif !important;
-    margin: 0;
-    padding: 0;
-    color: #333;
+  font-family: "Montserrat", Arial, sans-serif !important;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f0edd8;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
 }
 
 /* ------- Header ------- */
 .main-header {
-    background-color: #f2f2f2;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.main-header .custom-navbar {
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+}
+.main-header .custom-navbar .navbar-brand img {
+  width: 250px;
+  height: auto;
+}
+.main-header .custom-navbar .navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.main-header .custom-navbar .navbar-nav .nav-item {
+  margin-left: 10px;
+}
+.main-header .custom-toggler {
+  border: none;
+  background-color: transparent;
+}
+.main-header .navbar-toggler-icon {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/545/545671.png");
+  width: 30px;
+  height: 30px;
 }
 
-/* ------- Navbar ------- */
-.custom-navbar {
-    background-color: #f2f2f2;
-    padding: 10px 20px;
+/* ------- Footer ------- */
+.footer {
+  background-color: #d99e89;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+.footer ul {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.footer ul li {
+  margin-left: 20px;
+}
+.footer p {
+  margin: 10px 0;
+  color: #ffffff;
+  font-size: 12px;
+}
+@media (min-width: 768px) {
+  .footer p {
+    font-size: 14px;
+  }
+}
+.footer .social-icons {
+  margin-top: 10px;
+}
+.footer .social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
 }
 
-/* ------- Logo ------- */
-.navbar-brand img {
-    width: 250px;
-    height: auto;
-}
-
-/* ------- Menú de Navegación ------- */
-.navbar-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.navbar-nav .nav-item {
-    margin-left: 10px;
-}
-
-.navbar-nav .nav-link {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    padding: 10px 15px;
-    transition: color 0.3s ease-in-out;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #758c5e;
-}
-
-/* ------- Botón del menú hamburguesa en móviles ------- */
-.custom-toggler {
-    border: none;
-    background-color: transparent;
-}
-
-.navbar-toggler-icon {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/545/545671.png"); /* Icono personalizado */
-    width: 30px;
-    height: 30px;
-}
-
-/* ------- Estilos para móviles ------- */
-@media (max-width: 991px) {
-    .navbar-nav {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px;
-    }
-
-    .navbar-collapse {
-        background: #fff;
-        border-radius: 8px;
-        padding: 10px;
-    }
-
-    .navbar-nav .nav-item {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 16px;
-        display: block;
-    }
-}
-
-
-
-/* -------Estilos generales para la página------- */
-
+/* ------- Clases Generales ------- */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body {
-    background-color: #f0edd8;
-    color: #333333;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 50px 20px;
+/* Aplicar la animación a todos los títulos sin modificar otros estilos */
+h1, h2 {
+  animation: fadeIn 1s ease-in-out;
 }
 
-
-
-/*------- Estilos HOME introduccion------- */
+/* ------- Sección introduccion ------- */
 .intro {
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 20px;
 }
-
-/* Contenedor principal */
-.intro-container {
-    display: flex;
+.intro .intro-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .intro .intro-container {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    width: 100%;
+  }
 }
-
-/* Contenedor del Texto */
-.intro-text {
-    flex: 1;
-    max-width: 480px;
-    text-align: left;
+.intro .intro-text {
+  flex: 1;
+  max-width: 480px;
+  text-align: left;
 }
-
-.intro-text h1 {
+.intro .intro-text h1 {
+  font-size: 28px;
+  color: #758c5e;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .intro .intro-text h1 {
     font-size: 36px;
-    color:#758c5e; 
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
+  }
 }
-
-.intro-text p {
+.intro .intro-text p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .intro .intro-text p {
     font-size: 16px;
-    color: #333333;
-    line-height: 1.6;
-    text-align: left;
+  }
+}
+.intro .intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.intro .intro-image img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+.intro .intro-image img:hover {
+  transform: scale(1.1);
 }
 
-/* Contenedor de la Imagen */
-.intro-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.intro-image img {
-    max-width: 500px; 
-    width: 100%;
-    height: auto;
-    border: radius 12px;
-}
-
-.intro-image :hover{
-    transform: scale(1.1); 
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Explora nuestras muestras HOME */
+/* ------- Sección Explora Nuestras Muestras ------- */
 .flex-2 {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f0edd8;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f0edd8;
 }
-
 .flex-2 h2 {
-    font-size: 24px;
-    color: #333333;
-    font-weight: 600;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.flex-2 p {
-    max-width: 800px;
-    margin: 0 auto 50px auto; 
-    text-align: center;
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Contenedor de las muestras HOME */
-.muestras {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-/* Estilo de cada muestra HOME */
-.muestras div {
-    background-color: #f2f2f2;
-    padding: 15px;
-    border-radius: 8px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1); 
-}
-
-/* Imágenes dentro de las muestras HOME */
-.image-standard {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.image-standard :hover{
-    transform: scale(1.1); 
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Botones HOME */
-.muestras button {
-    display: inline-block;
-    width: 100%;
-    padding: 10px;
-    background-color: #d99e89;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.muestras button:hover {
-    background-color: black;
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Estilo general para la sección de workshops */
-.workshop {
-    padding: 20px;
-    text-align: center;
-    background-color: #758c5e;
-}
-
-.workshop h2 {
-    font-size: 24px;
-    color: #ffffff;
-    margin-bottom: 10px;
-    padding: 10px;
-}
-
-.workshop p {
-    font-size: 16px;
-    color: #ffffff;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-
-/* Contenedor de la sección workshops */
-.workshop-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-/* Contenedor de la imagen */
-.workshop-image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
-}
-
-/* Imagen del workshop */
-.workshops-image {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    padding: 10px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.workshops-image :hover{
-    transform: scale(1.05);
-}
-
-/* Botón debajo de la imagen */
-.workshop-button {
-    padding: 10px 20px;
-    background-color: #d99e89;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.workshop-button:hover {
-    background-color: #000000;
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Texto del workshop */
-.workshop-text p{
-    width: 80%;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #ffffff;
-    text-align: left;
-}
-
-/*------- Sección principal de la página MUESTRAS-------*/
-.main-banner {
-    position: relative;
-    width: 100%;
-    height: auto; 
-    overflow: hidden;
-}
-
-.main-banner .banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
-
-.main-banner h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 52px;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    margin: 0;
-    text-align: center;
-}
-
-.muestras {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Estilo de las imágenes de las muestras */
-.muestra-item img {
-    width: 100%;
-    max-width: 100px; 
-    height: auto; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-}
-
-.muestra-item img :hover{
-    transform: scale(1.1); 
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Explora nuestras creaciones muestras*/
-.explora-creaciones {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.explora-creaciones h2 {
-    font-size: 24px;
-    color: #333333;
-    margin-bottom:10px;
-    padding: 10px;
-}
-
-.explora-creaciones p {
-    font-size: 16px; 
-    color: #333333;
-    margin: 0 auto 30px auto;
-    text-align:center;
-    line-height: 20px;
-    max-width: 800px;
-}
-
-/* Galería */
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; 
-    padding: 10px 0;
-}
-
-.gallery-item {
-    flex: 1 1 calc(33.333% - 20px); 
-    max-width: 250px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Imágenes */
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; 
-    border-radius: 8px;
-}
-
-/* Sección de destacados */
-.destacados {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.destacados h2 {
-    font-size: 24px;
-    color: #333333; 
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-/* Galería */
-.galeria {
-    display: flex;
-    gap: 50px; 
-    margin-bottom: 30px; 
-}
-
-.galeria-item {
-    width: 20%;
-    border-radius: 8px; 
-    display: flex; 
-    justify-content: center;
-}
-
-.galeria-item img {
-    width: 100%; 
-    height: auto;
-    object-fit: contain; 
-}
-
-/* Lista de detalles */
-.detalles {
-    text-align: left;
-    max-width: 800px; 
-    margin-top: 25px;
-    color: #666; 
-    font-size: 16px;
-    line-height: 1.6; 
-}
-
-.detalles li {
-    margin-bottom: 10px; 
-}
-
-/* Texto decorativo debajo */
-.texto-decorativo {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 20px;
-    color: #758c5e;
-    font-style: italic;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* -----------Sección página WORKSHOP------------ */
-/* El banner de esta parte tiene el mismo estilo que la página de muestras*/
-
-/* Contenedor principal */
-.intro-workshops {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: 60px auto;
-    gap: 40px;
-}
-
-/* Contenedor del Texto */
-.intro-content {
-    flex: 1;
-    max-width: 500px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; 
-}
-
-/* Título alineado correctamente */
-.intro-content h2 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-/* Párrafo alineado correctamente */
-.intro-content p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Contenedor de la Imagen */
-.intro-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-/* Imagen con tamaño y bordes adecuados */
-.intro-image img {
-    width: 100%;
-    max-width: 450px;
-    border-radius: 12px;
-}
-
-/* Sección de próximos talleres */
-.upcoming-workshops {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-/* Estilos para el título */
-.upcoming-workshops h2 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-/* Contenedor de los talleres */
-.workshops-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 40px; /* Espaciado entre elementos */
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Estilo de cada taller */
-.workshop-item {
-    padding: 20px;
-    border-radius: 12px;
-    width: 280px;
-    text-align: center;
-}
-
-/* Imágenes de los talleres */
-.workshop-item img {
-    width: 100%;
-    max-width: 120px;
-    height: auto;
-    margin-bottom: 15px;
-    border-radius: 10px;
-}
-
-/* Texto de los talleres */
-.workshop-item p {
-    font-size: 14px;
-    color: #333333;
-    line-height: 1.4;
-    text-align: center;
-}
-
-
-/*------- Estilo general para la sección de Contactanos------- */
-.contact {
-    padding: 20px;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 24px;
-    color: #333333;
-    margin-bottom: 10px;
-}
-
-.contact p {
-    font-size: 16px;
-    color: #333333;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-
-/* Contenedor del formulario */
-.contact-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 600px;
-}
-
-/* Formulario */
-.contact-form {
-    width: 100%;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Grupos de campos */
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-size: 14px;
-    color: #000000;
-    margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 12px;
-    box-sizing: border-box;
-    background-color: #fff;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: black;
-    outline: none;
-}
-
-/* Botón del formulario */
-.contact-button {
-    display: inline-block;
-    width: 100%;
-    padding: 10px;
-    background-color: #d99e89;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
-
-.contact-button:hover {
-    background-color: black;
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-/* -------Sección de la página SOBRE NOSOTROS------- */
-.about-us {
-    padding: 50px 20px;
-    background-color: #f5f5e6; 
-    text-align: center;
-}
-
-/* Imagen del banner */
-.about-banner img {
-    width: 100%;
-    max-height: 350px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-/* Contenedor de Texto */
-.about-container {
-    max-width: 800px;
-    margin: 40px auto;
-    text-align: center;
-}
-
-.about-container h2 {
+  font-size: 22px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+@media (min-width: 768px) {
+  .flex-2 h2 {
     font-size: 32px;
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 15px;
+  }
 }
-
-.about-container p {
+.flex-2 p {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  font-size: 14px;
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .flex-2 p {
     font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
+  }
+}
+.flex-2 .muestras {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+.flex-2 .muestras div {
+  width: 250px;
+  text-align: center;
+}
+.flex-2 .muestras div img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.flex-2 .muestras div img:hover {
+  transform: scale(1.1);
+}
+.flex-2 .muestras div button {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background-color: #d99e89;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.flex-2 .muestras div button:hover {
+  background-color: black;
+  transform: scale(1.1);
 }
 
-/* Contenedor de Imagen y Lista */
+/* ------- Sección Workshops ------- */
+.workshop {
+  padding: 20px;
+  text-align: center;
+  background-color: #758c5e;
+}
+.workshop h2 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+@media (min-width: 768px) {
+  .workshop h2 {
+    font-size: 30px;
+  }
+}
+.workshop p {
+  font-size: 12px;
+  color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+@media (min-width: 768px) {
+  .workshop p {
+    font-size: 14px;
+  }
+}
+.workshop .workshop-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .workshop .workshop-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.workshop .workshop-content .workshop-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+.workshop .workshop-content .workshop-image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.workshop .workshop-content .workshop-image-container img:hover {
+  transform: scale(1.05);
+}
+.workshop .workshop-content .workshop-image-container .workshop-button {
+  background-color: #d99e89;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.workshop .workshop-content .workshop-image-container .workshop-button:hover {
+  background-color: black;
+  transform: scale(1.1);
+}
+.workshop .workshop-content .workshop-image-container .workshop-button:hover {
+  background-color: black;
+  transform: scale(1.1);
+}
+.workshop .workshop-content .workshop-text {
+  width: 60%;
+}
+.workshop .workshop-content .workshop-text p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: white;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .workshop .workshop-content .workshop-text p {
+    font-size: 16px;
+  }
+}
+
+/* ------- Sección Contacto ------- */
+.contact {
+  padding: 20px;
+  text-align: center;
+}
+.contact h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .contact h2 {
+    font-size: 32px;
+  }
+}
+.contact p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+@media (min-width: 768px) {
+  .contact p {
+    font-size: 16px;
+  }
+}
+.contact .contact-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+@media (max-width: 767px) {
+  .contact .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.contact .contact-content .contact-form {
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.contact .contact-content .contact-form .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.contact .contact-content .contact-form .form-group label {
+  display: block;
+  font-size: 14px;
+  color: black;
+  margin-bottom: 5px;
+}
+.contact .contact-content .contact-form .form-group input, .contact .contact-content .contact-form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 12px;
+  box-sizing: border-box;
+  background-color: white;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.contact .contact-content .contact-form .form-group input:focus, .contact .contact-content .contact-form .form-group textarea:focus {
+  border-color: black;
+  outline: none;
+}
+.contact .contact-content .contact-form .contact-button {
+  background-color: #d99e89;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.contact .contact-content .contact-form .contact-button:hover {
+  background-color: black;
+  transform: scale(1.1);
+}
+.contact .contact-content .contact-form .contact-button:hover {
+  background-color: black;
+  transform: scale(1.1);
+}
+
+/* ------- Sección Banner Workshops ------- */
+.main-banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.main-banner .banner-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main-banner h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 47px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  margin: 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .main-banner h1 {
+    font-size: 52px;
+  }
+}
+
+/* ------- Sección Aprende con Nosotros ------- */
+.intro-workshops {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 60px auto;
+  gap: 40px;
+}
+.intro-workshops .intro-content {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.intro-workshops .intro-content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .intro-workshops .intro-content h2 {
+    font-size: 32px;
+  }
+}
+.intro-workshops .intro-content p {
+  font-size: 14px;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .intro-workshops .intro-content p {
+    font-size: 16px;
+  }
+}
+.intro-workshops .intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.intro-workshops .intro-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+}
+
+/* ------- Sección Próximos Talleres ------- */
+.upcoming-workshops {
+  text-align: center;
+  padding: 50px 20px;
+}
+.upcoming-workshops h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .upcoming-workshops h2 {
+    font-size: 32px;
+  }
+}
+.upcoming-workshops .workshops-gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .upcoming-workshops .workshops-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.upcoming-workshops .workshops-gallery .workshop-item {
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: center;
+}
+.upcoming-workshops .workshops-gallery .workshop-item img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+.upcoming-workshops .workshops-gallery .workshop-item p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .upcoming-workshops .workshops-gallery .workshop-item p {
+    font-size: 16px;
+  }
+}
+
+/* ------- Contacto en Workshops ------- */
+.contact {
+  text-align: center;
+  padding: 20px;
+}
+.contact h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .contact h2 {
+    font-size: 32px;
+  }
+}
+.contact p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+@media (min-width: 768px) {
+  .contact p {
+    font-size: 16px;
+  }
+}
+.contact .contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.contact .contact-content .contact-form {
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.contact .contact-content .contact-form .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.contact .contact-content .contact-form .form-group label {
+  display: block;
+  font-size: 14px;
+  color: black;
+  margin-bottom: 5px;
+}
+.contact .contact-content .contact-form .form-group input, .contact .contact-content .contact-form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 12px;
+  box-sizing: border-box;
+  background-color: white;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.contact .contact-content .contact-form .form-group input:focus, .contact .contact-content .contact-form .form-group textarea:focus {
+  border-color: black;
+  outline: none;
+}
+.contact .contact-content .contact-form .contact-button {
+  background-color: #d99e89;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.contact .contact-content .contact-form .contact-button:hover {
+  background-color: black;
+  transform: scale(1.1);
+}
+.contact .contact-content .contact-form .contact-button:hover {
+  background-color: black;
+  transform: scale(1.1);
+}
+
+/* ------- Sección Sobre Nosotros ------- */
+.about-us {
+  padding: 50px 20px;
+  background-color: #f7f6ea;
+  text-align: center;
+}
+.about-us .about-banner img {
+  width: 100%;
+  max-height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+.about-us .about-container {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+.about-us .about-container h2 {
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .about-us .about-container h2 {
+    font-size: 32px;
+  }
+}
+.about-us .about-container p {
+  font-size: 14px;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .about-us .about-container p {
+    font-size: 16px;
+  }
+}
+
+/* ------- Sección de Información y Características ------- */
 .about-details {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1000px;
-    margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+.about-details .about-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+}
+.about-details .about-list {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+  padding-left: 20px;
+}
+.about-details .about-list li {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  list-style-type: disc;
 }
 
-/* Imagen al lado de la lista */
-.about-image img {
-    width: 300px;
-    height: auto;
-    border-radius: 12px;
+/* ------- Sección Banner Muestras ------- */
+.main-banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.main-banner .banner-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main-banner h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  margin: 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .main-banner h1 {
+    font-size: 52px;
+  }
 }
 
-/* Lista de características */
-.about-list {
-    flex: 1;
-    max-width: 500px;
-    text-align: left;
-    padding-left: 20px;
+/* ------- Sección Explora Nuestras Creaciones ------- */
+.explora-creaciones {
+  text-align: center;
+  padding: 40px 20px;
 }
-
-.about-list li {
+.explora-creaciones h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+@media (min-width: 768px) {
+  .explora-creaciones h2 {
+    font-size: 32px;
+  }
+}
+.explora-creaciones p {
+  font-size: 14px;
+  color: #1a1a1a;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 800px;
+}
+@media (min-width: 768px) {
+  .explora-creaciones p {
     font-size: 16px;
-    color: #333;
-    margin-bottom: 10px;
-    list-style-type: disc;
+  }
+}
+.explora-creaciones .gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 0;
+}
+@media (max-width: 767px) {
+  .explora-creaciones .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.explora-creaciones .gallery .gallery-item {
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.explora-creaciones .gallery .gallery-item img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
 }
 
-/*------- PAGINA DE CONTACTANOS------- */
+/* ------- Sección Destacados de la Galería ------- */
+.destacados {
+  text-align: center;
+  padding: 40px 20px;
+}
+.destacados h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .destacados h2 {
+    font-size: 32px;
+  }
+}
+.destacados .galeria {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+.destacados .galeria .galeria-item {
+  width: 20%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+}
+.destacados .galeria .galeria-item img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.destacados .detalles {
+  text-align: left;
+  max-width: 800px;
+  margin-top: 25px;
+  color: #0d0d0d;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.destacados .detalles li {
+  margin-bottom: 10px;
+}
+.destacados .texto-decorativo {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #758c5e;
+  font-style: italic;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------- Sección Contacto ------- */
 .contact-section {
-    text-align: center;
-    padding: 60px 20px;
+  text-align: center;
+  padding: 50px 20px;
 }
-
 .contact-section h2 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333333;
-    margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
 }
-
+@media (min-width: 768px) {
+  .contact-section h2 {
+    font-size: 32px;
+  }
+}
 .contact-section p {
+  font-size: 16px;
+  color: #1a1a1a;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+}
+.contact-section .contact-container {
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.contact-section .contact-container .contact-image img {
+  max-width: 350px;
+  border-radius: 12px;
+}
+.contact-section .contact-container .contact-form {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f6ea;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.contact-section .contact-container .contact-form label {
+  font-weight: bold;
+  color: #758c5e;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: left;
+}
+.contact-section .contact-container .contact-form input, .contact-section .contact-container .contact-form select, .contact-section .contact-container .contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #e2dcb3;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: white;
+  color: #333;
+}
+.contact-section .contact-container .contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.contact-section .contact-container .contact-form button {
+  width: 100%;
+  background-color: #d99e89;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.contact-section .contact-container .contact-form button:hover {
+  background-color: black;
+  transform: scale(1.1);
+}
+
+/* ------- Información de Contacto ------- */
+.contact-info {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+.contact-info p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+@media (min-width: 768px) {
+  .contact-info p {
     font-size: 16px;
-    color: #333333;
-    max-width: 700px;
-    margin: 0 auto 30px auto;
+  }
 }
 
-/* Contenedor del formulario */
-.contact-container {
-    display: flex;
-    align-items: center;
+/* ------- Estilos Responsivos Generales ------- */
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding: 10px;
+  }
+  .footer ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  .social-icons {
     justify-content: center;
-    max-width: 1100px;
-    margin: 40px auto;
-    gap: 50px;
+  }
 }
-
-/* Imagen decorativa */
-.contact-image img {
-    max-width: 400px;
-    border-radius: 12px;
+/* ------- Responsive para Index ------- */
+@media (max-width: 767px) {
+  .intro-container {
+    text-align: center;
+  }
+  .muestras {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .intro-image, .workshop-image-container {
+    width: 100%;
+    text-align: center;
+  }
+  .intro-image img, .workshop-image-container img {
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .intro-text, .workshop-text {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .workshop-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+  }
 }
-
-/* Formulario de contacto */
-.contact-form {
+/* ------- Responsive para Workshop ------- */
+@media (max-width: 767px) {
+  .workshop-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .workshop-text {
     width: 100%;
-    max-width: 500px;
+    text-align: center;
+    padding: 20px;
+  }
+  .workshop-image-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .workshop-image-container img {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+  }
+  .workshops-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .workshops-gallery .workshop-item {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  .workshops-gallery .workshop-item img {
+    width: 80px;
+  }
+  .workshops-gallery .workshop-item p {
+    text-align: center;
+  }
+  .intro-workshops {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .intro-workshops .intro-content {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+  .intro-workshops .intro-content h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
 }
-
-.contact-form label {
-    font-weight: bold;
-    color: #758c5e;
-    margin-bottom: 5px;
+@media (max-width: 767px) and (min-width: 768px) {
+  .intro-workshops .intro-content h2 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .intro-workshops .intro-content p {
+    line-height: 1.5;
+  }
+  .intro-workshops .intro-image {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .intro-workshops .intro-image img {
+    width: 90%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+  }
+}
+/* ------- Responsive para Sobre Nosotros ------- */
+@media (max-width: 767px) {
+  .about-details {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .about-list {
     text-align: left;
-    display: block;
+    padding: 20px;
+  }
 }
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
+/* ------- Responsive para Muestras ------- */
+@media (max-width: 767px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    justify-content: center;
+  }
+  .gallery .gallery-item img {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .destacados {
+    padding: 20px;
+  }
+  .destacados h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 767px) and (min-width: 768px) {
+  .destacados h2 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .destacados .galeria {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .destacados .galeria-item {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .destacados .galeria-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  .destacados .detalles {
+    max-width: 90%;
+    text-align: center;
+    margin: 20px auto;
+  }
+  .destacados .detalles li {
     font-size: 16px;
+    text-align: left;
+  }
 }
-
-.contact-form textarea {
-    resize: none;
-}
-
-.contact-form button {
-    background-color: #d99e89;
-    color: white;
+/* ------- Responsive para Contacto ------- */
+@media (max-width: 767px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 90%;
+    padding: 0 20px;
+    gap: 20px;
+  }
+  .contact-image {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+  .contact-image img {
+    max-width: 90%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+  }
+  .contact-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f7f6ea;
+    border-radius: 8px;
+  }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  .contact-form button {
+    width: 100%;
     padding: 12px;
     font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.contact-form button:hover {
-    background-color: #000000;
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Estilos específicos para el dropdown */
-#subject {
-    background-color: #ffffff; 
-    color: #758c5e; 
-    border: 1px solid #5a7044; 
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px; 
-    cursor: pointer;
-    appearance: none; 
-    -webkit-appearance: none; 
-    -moz-appearance: none; 
-    position: relative;
-    text-align: left;
-}
-
-/* Cambia la flecha del dropdown */
-#subject::after {
-    content: "▼"; 
-    font-size: 14px;
-    color: #758c5e; 
-    position: absolute;
-    right: 15px; 
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none; 
-}
-
-/* Cuando el usuario pasa el cursor sobre el dropdown */
-#subject:hover {
-    background-color: #f0edd8; 
-}
-
-/* Cuando el usuario hace clic en el dropdown */
-#subject:focus {
-    background-color: #f0edd8;
-    outline: none;
-}
-
-/* Opciones dentro del dropdown */
-#subject option {
-    background-color: #ffffff;
-    color: #333;
-    padding: 10px;
-}
-
-/* Información de contacto */
-.contact-info {
-    text-align: center;
-    max-width: 700px; 
-    margin: 0 auto; 
-    padding: 20px 0;
-    font-size: 16px;
-    color: #333333;
-    line-height: 1.6;
-}
-
-.contact-info p {
-    margin: 5px 0;
-}
-
-/* -------Estilos para los enlaces del footer------- */ 
-
-.footer{
-    background-color: #d99e89;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    margin: 0%;
-    box-sizing: border-box;
-}
-
-.footer ul {
-    list-style: none;
-    margin: 20px 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.footer li {
-    margin-left: 20px;
-}
-
-.footer a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.footer a:hover {
-    color: black;
-}
-
-/* Estilos para los iconos de redes sociales */   
-
-
-/* Texto del footer */
-footer p {
-    margin: 10px 0;
-    color: #ffffff;
-    font-size: 14px;
-}
-
-/* Links de navegación en el footer */
-footer a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-}
-
-footer a:hover {
-    color: #fefefe; 
-}
-
-/* Redes sociales */
-footer .social-icons {
-    margin-top: 10px;
-}
-
-footer .social-icons img {
-    width: 30px;
-    height: 30px;
-    margin: 0 5px;
-}
-
-/*------- Estilos generales para hacer responsive------- */
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* Para Tablets (768px - 1024px) */
-@media (max-width: 1024px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .intro-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro-image img {
-        width: 90%;
-    }
-
-    .muestras {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .workshop-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .workshop-image-container img {
-        max-width: 80%;
-    }
-
-    .contact-form {
-        width: 80%;
-    }
-}
-
-/* Para Móviles (hasta 767px) */
-@media (max-width: 767px) {
-    .intro-image img,
-    .image-standard,
-    .workshops-image {
-        max-width: 80%; 
-        display: block;
-        margin: 0 auto; 
-    }
-
-
-
-    .intro-text h1 {
-        font-size: 28px;
-    }
-
-    .intro-image img {
-        width: 90%;
-    }
-
-    .muestras {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .muestras div {
-        width: 90%;
-    }
-
-    .workshop-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .workshop-image-container img {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .contact-form {
-        width: 90%;
-    }
-
-    .footer nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-}
-
-/* ------- Ajustes Mobile adicionales para mejorar la responsividad ------- */
-@media (max-width: 768px) {
-    /* Navbar */
-    .navbar-nav {
-        gap: 10px;
-    }
-
-    /* Ajustes en la Sección de Introducción (Home) */
-    .intro-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .intro-text {
-        max-width: 100%;
-        padding: 20px;
-    }
-
-    .intro-image img {
-        max-width: 80%;
-        display: block;
-        margin: 0 auto;
-    }
-
-    /* Ajustes en la Sección Muestras */
-    @media (max-width: 767px) {
-        .muestras {
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .muestras div {
-            width: 100%;
-            max-width: 300px;
-        }
-    
-        .gallery {
-            display: grid;
-            grid-template-columns: 1fr; /* Una sola columna en móviles */
-            gap: 15px;
-            justify-content: center;
-        }
-    
-        .gallery-item img {
-            width: 100%;
-            max-width: 90%;
-            margin: 0 auto;
-        }
-        .destacados {
-            text-align: center;
-            padding: 20px;
-        }
-    
-        .destacados h2 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-    
-        .galeria {
-            display: flex;
-            flex-direction: column; /* Asegura que los elementos se apilen en móviles */
-            align-items: center;
-            gap: 20px;
-        }
-    
-        .galeria-item {
-            width: 100%;
-            max-width: 300px; /* Evita que las imágenes sean demasiado grandes */
-            margin: 0 auto;
-        }
-    
-        .galeria-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-    
-        .detalles {
-            max-width: 90%;
-            text-align: center;
-            margin: 20px auto;
-        }
-    
-        .detalles li {
-            font-size: 16px;
-            text-align: left; /* Mantiene la alineación izquierda para una mejor lectura */
-        }
-    }
-    
-
-    /* Ajustes en la Sección Workshops */
-    @media (max-width: 767px) {
-        .workshop-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-    
-        .workshop-text {
-            width: 100%;
-            text-align: center;
-            padding: 20px;
-        }
-    
-        .workshop-image-container {
-            width: 100%;
-            text-align: center;
-            margin-top: 20px;
-        }
-    
-        .workshop-image-container img {
-            width: 90%;
-            max-width: 400px; /* Evita que sea demasiado grande en móviles */
-            height: auto;
-            border-radius: 10px;
-        }
-    
-        .workshops-gallery {
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .workshop-item {
-            width: 90%;
-            margin-bottom: 20px;
-        }
-    
-        .workshop-item img {
-            width: 80px; /* Tamaño más reducido para móviles */
-        }
-    
-        .workshop-item p {
-            text-align: center;
-        }
-        .intro-workshops {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-    
-        .intro-content {
-            width: 100%;
-            text-align: center;
-            padding: 15px;
-        }
-    
-        .intro-content h2 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-    
-        .intro-content p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-    
-        .intro-image {
-            width: 100%;
-            text-align: center;
-            margin-top: 15px;
-        }
-    
-        .intro-image img {
-            width: 90%;
-            max-width: 350px;
-            height: auto;
-            border-radius: 10px;
-        }
-    }
-    
-
-    /* Ajustes en la Sección Sobre Nosotros */
-    .about-details {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image img {
-        max-width: 80%;
-        margin: 0 auto;
-    }
-
-    .about-list {
-        text-align: left;
-        padding: 20px;
-    }
-
-    /* Ajustes en la Sección Contacto */
-    .contact-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .contact-form {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    /* Footer */
-    .footer nav ul {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-}
+  }
+}/*# sourceMappingURL=estilos.css.map */
