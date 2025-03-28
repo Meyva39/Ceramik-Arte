@@ -1,276 +1,189 @@
-
 /* ------- Estilos Responsivos Generales ------- */
 @media (max-width: 1024px) {
     .container {
-        padding: 10px 15px;
+      padding: 10px 15px;
     }
-}
-
-@media (max-width: 767px) {
+  }
+  
+  @media (max-width: 767px) {
     .footer ul {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
     }
-
+  
     .social-icons {
-        justify-content: center;
+      justify-content: center;
     }
-}
-
-/* ------- Responsive para Index ------- */
-@media (max-width: 767px) {
-    .intro-container, .intro-text {
-        flex-direction: column !important;
-        text-align: center;
-    }
-    .intro {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .muestras {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .intro-image, .workshop-image-container {
-        max-width: 90%;
-        margin-top: 20px;
-        text-align: center;
-
-        img {
-            max-width: 90%; 
-            height: auto;
-            margin: 0 auto;
-        }
-    }
-
-    .intro-text, .workshop-text {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 0 15px; // Para evitar que el texto quede demasiado pegado a los bordes
-    }
-
-    .workshop-content {
-        flex-direction: column !important;
-        text-align: center;
-        align-items: center;
-        gap: 20px;
-    }
-}
-
-
-/* ------- Responsive para Workshop ------- */
-@media (max-width: 767px) {
-    .workshop-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .workshop-text {
-        width: 100%;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .workshop-image-container {
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-
-        img {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 10px;
-        }
-    }
-
-    .workshops-gallery {
-        flex-direction: column;
-        align-items: center;
-
-        .workshop-item {
-            width: 90%;
-            margin-bottom: 20px;
-
-            img {
-                width: 80px;
-            }
-
-            p {
-                text-align: center;
-            }
-        }
-    }
-
-    .intro-workshops {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-
-        .intro-content {
-            width: 100%;
-            text-align: center;
-            padding: 15px;
-
-            h2 {
-                @include responsive-text(22px, 32px);
-                margin-bottom: 10px;
-            }
-
-            p {
-                line-height: 1.5;
-            }
-        }
-
-        .intro-image {
-            width: 100%;
-            text-align: center;
-            margin-top: 15px;
-
-            img {
-                width: 90%;
-                max-width: 350px;
-                height: auto;
-                border-radius: 10px;
-            }
-        }
-    }
-}
-
-
-
-/* ------- Responsive para Sobre Nosotros ------- */
-@media (max-width: 767px) {
-    .about-details {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image img {
-        max-width: 80%;
-        margin: 0 auto;
-    }
-
-    .about-list {
-        text-align: left;
-        padding: 20px;
-    }
-}
-
-
-/* ------- Responsive para Muestras ------- */
-@media (max-width: 767px) {
-    .gallery {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 15px;
-        justify-content: center;
-
-        .gallery-item img {
-            width: 100%;
-            max-width: 90%;
-            margin: 0 auto;
-        }
-    }
-
-    .destacados {
-        padding: 20px;
-
-        h2 {
-            @include responsive-text(22px, 32px);
-            margin-bottom: 10px;
-        }
-
-        .galeria {
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .galeria-item {
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-
-        .galeria-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .detalles {
-            max-width: 90%;
-            text-align: center;
-            margin: 20px auto;
-        }
-
-        .detalles li {
-            font-size: 16px;
-            text-align: left;
-        }
-    }
-}
-
-/* ------- Responsive para Contacto ------- */
-@media (max-width: 767px) {
+  
+    .intro-container,
+    .intro-text,
+    .workshop-content,
+    .intro-workshops,
+    .about-details,
+    .gallery,
     .contact-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+      flex-direction: column !important;
+      text-align: center;
+      align-items: center;
+    }
+  
+    .intro {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .intro-image,
+    .workshop-image-container,
+    .intro-workshops .intro-image {
+      max-width: 90%;
+      margin-top: 20px;
+      text-align: center;
+  
+      img {
+        max-width: 90%;
+        height: auto;
+        border-radius: 10px;
+      }
+    }
+  
+    .intro-text,
+    .workshop-text,
+    .intro-workshops .intro-content {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 15px;
+      text-align: center;
+  
+      h2 {
+        @include responsive-text(22px, 32px);
+        margin-bottom: 10px;
+      }
+  
+      p {
+        line-height: 1.5;
+      }
+    }
+  
+    .muestras {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .workshops-gallery {
+      flex-direction: column;
+      align-items: center;
+  
+      .workshop-item {
+        width: 90%;
+        margin-bottom: 20px;
+  
+        img {
+          width: 80px;
+        }
+  
+        p {
+          text-align: center;
+        }
+      }
+    }
+  
+    .about-image img {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  
+    .about-list {
+      text-align: left;
+      padding: 20px;
+    }
+  
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+  
+      .gallery-item img {
         width: 100%;
         max-width: 90%;
-        padding: 0 20px;
-        gap: 20px;
+        margin: 0 auto;
+      }
     }
-
-    .contact-image {
-        width: 90%;
-        display: flex;
-        justify-content: center;
-
-            img {
-            max-width: 90%; // Evitar que la imagen se desborde
-            max-width: 350px;
+  
+    .destacados {
+      padding: 20px;
+  
+      h2 {
+        @include responsive-text(22px, 32px);
+        margin-bottom: 10px;
+      }
+  
+      .galeria {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+  
+        .galeria-item {
+          width: 100%;
+          max-width: 300px;
+          margin: 0 auto;
+  
+          img {
+            width: 100%;
             height: auto;
             border-radius: 10px;
+          }
         }
+      }
+  
+      .detalles {
+        max-width: 90%;
+        margin: 20px auto;
+        text-align: center;
+  
+        li {
+          font-size: 16px;
+          text-align: left;
+        }
+      }
     }
+  
+    .contact-image {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+  
+      img {
+        max-width: 350px;
+        height: auto;
+        border-radius: 10px;
+      }
+    }
+  
     .contact-form {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      background-color: lighten($color-fondo, 5%);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+      input,
+      select,
+      textarea {
         width: 100%;
-        max-width: 400px; // Limitar el ancho del formulario en mobile
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        background-color: lighten($color-fondo, 5%);
-        border-radius: 8px;
-    }
-
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-        width: 100%;
-        font-size: 14px; 
+        font-size: 14px;
         box-sizing: border-box;
-    }
-
-    .contact-form button {
+      }
+  
+      button {
         width: 100%;
         padding: 12px;
         font-size: 16px;
+      }
     }
-}
-
-@media (max-width: 767px) {
-    .intro-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+  }
+  
