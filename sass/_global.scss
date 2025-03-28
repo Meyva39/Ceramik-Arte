@@ -1,76 +1,91 @@
 /* ------- Animación de Entrada (FadeIn) ------- */
 @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(-20px);
+      opacity: 0;
+      transform: translateY(-20px);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-
-
-
-/* ------- Estilos Generales ------- */
-body {
-    font-family: $font-principal !important;
+  }
+  
+  /* ------- Reset y Estilos Generales ------- */
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: $font-principal;
     margin: 0;
     padding: 0;
     color: $color-texto;
     background-color: $color-fondo;
     overflow-x: hidden;
-}
-
-main {
+  }
+  
+  main {
     max-width: $max-width;
     margin: 0 auto;
     padding: 50px 20px;
-}
-
+  }
+  
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Animación en títulos */
+  h1, h2 {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
 
 /* ------- Header ------- */
 .main-header {
     background-color: $color-header;
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
+  
     .custom-navbar {
-        padding: 10px 20px;
-
-        .navbar-brand {
-            img {
-                width: 250px;
-                height: auto;
-            }
+      padding: 10px 20px;
+  
+      .navbar-brand img {
+        width: 250px;
+        height: auto;
+      }
+  
+      .navbar-nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+  
+        .nav-item {
+          margin-left: 10px;
         }
-
-        .navbar-nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-
-            .nav-item {
-                margin-left: 10px;
-            }
-
-            .nav-link {
-                @extend %nav-link;
-            }
+  
+        .nav-link {
+          @extend %nav-link;
         }
+      }
     }
-
+  
     .custom-toggler {
-        border: none;
-        background-color: transparent;
+      border: none;
+      background-color: transparent;
     }
-
+  
     .navbar-toggler-icon {
-        background-image: url("https://cdn-icons-png.flaticon.com/512/545/545671.png");
-        width: 30px;
-        height: 30px;
+      background-image: url("https://cdn-icons-png.flaticon.com/512/545/545671.png");
+      width: 30px;
+      height: 30px;
     }
-}
+  }
+  
+
 
 /* ------- Footer ------- */
 .footer {
@@ -80,55 +95,67 @@ main {
     width: 100%;
     margin: 0;
     box-sizing: border-box;
-
+  
     ul {
-        list-style: none;
-        margin: 20px 0;
-        padding: 0;
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-
-        li {
-            margin-left: 20px;
-        }
-
-        a {
-            @extend %nav-link;
-        }
+      list-style: none;
+      margin: 20px 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+  
+      li {
+        margin-left: 20px;
+      }
+  
+      a {
+        @extend %nav-link;
+      }
     }
-
+  
     p {
-        margin: 10px 0;
-        color: #ffffff;
-        @include responsive-text(12px, 14px); // Párrafos más pequeños en el footer
+      margin: 10px 0;
+      color: #ffffff;
+      @include responsive-text(12px, 14px);
     }
-
+  
     .social-icons {
-        margin-top: 10px;
-
-        img {
-            width: 30px;
-            height: 30px;
-            margin: 0 5px;
-        }
+      margin-top: 10px;
+  
+      img {
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+      }
     }
-}
-
+  }
+  
 /* ------- Clases Generales ------- */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-.container {
+  }
+  
+  .container {
     max-width: $max-width;
     margin: 0 auto;
     padding: 20px;
-}
-
-/* Aplicar la animación a todos los títulos sin modificar otros estilos */
-h1, h2 {
+  }
+  
+  h1, h2 {
     animation: fadeIn 1s ease-in-out;
-}
+  }
+  
+  /* ------- Animación de Entrada (FadeIn) ------- */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
